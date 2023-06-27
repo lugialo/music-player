@@ -1,8 +1,12 @@
-import pygame
-from pygame import mixer
+import contextlib
+with contextlib.redirect_stdout(None):
+    import pygame
+    from pygame import mixer
 import os
 from os import system
 import threading
+
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 musics_dir = os.path.join(os.getcwd(), "musics")
 
